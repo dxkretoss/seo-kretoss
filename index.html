@@ -7,6 +7,8 @@
   <title>
     Kretoss Technology — SEO Services for US Businesses | Get Found on Google
   </title>
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+
   <meta name="description"
     content="Kretoss Technology helps US businesses rank higher on Google with proven SEO strategies — technical SEO, local SEO, content, and link building that turn searches into customers." />
   <style>
@@ -3214,7 +3216,7 @@
       }
     }
 
-      /* Tablet */
+    /* Tablet */
     @media (max-width: 992px) {
       .contact-container {
         grid-template-columns: 1fr;
@@ -3225,7 +3227,7 @@
         grid-template-columns: 1fr;
       }
 
-      .contact-card{
+      .contact-card {
         padding: 20px;
       }
     }
@@ -3236,7 +3238,6 @@
         gap: 30px;
       }
     }
-
   </style>
 </head>
 
@@ -3246,9 +3247,7 @@
     <header class="header-header">
       <div class="header-div">
         <a href="#hero" class="header-a">
-          <span class="header-span">K</span>
-          <span class="header-span-2">Kretoss</span>
-          <span class="header-span-3">SEO</span>
+          <img src="assets/kretoss-dark-logo.png" alt="Kretoss SEO" style="height: 48px; width: auto; object-fit: contain;" />
         </a>
         <nav class="nav-nav">
           <a href="#what-is-seo" data-hover="color:var(--accent)" class="shared-a">What is SEO?</a>
@@ -3391,8 +3390,7 @@
           How healthy is your website?
         </h2>
         <p class="shared-p">
-          Enter your website address and get an instant SEO report card — the
-          same checks we run for every new client.
+          Enter your website address and our AI analysis runs the same checks we do for every new client — instantly.
         </p>
       </div>
       <div data-reveal data-card class="checker-div">
@@ -4338,8 +4336,7 @@
             Our SEO process
           </h2>
           <p class="shared-p">
-            The same proven sequence for every client — you always know what
-            we're working on and why.
+            The same proven sequence for every client — human strategy, accelerated by AI tools at every step. You always know what we're working on and why.
           </p>
         </div>
         <style>
@@ -5251,13 +5248,13 @@
           </div>
           <div class="why-div">
             <div class="why-div-2">
-              ∞
+              AI
             </div>
             <div class="shared-div-6">
-              Custom strategies
+              AI + human expertise
             </div>
             <div class="shared-div-13">
-              No templates. Your market, your competitors, your plan.
+              AI tools find opportunities fast; experienced strategists decide what’s worth doing.
             </div>
           </div>
         </div>
@@ -5616,6 +5613,19 @@
             </div>
           </div>
         </div>
+        <div class="faq-item faq-div-6" data-open="false">
+          <button class="faq-toggle k-style-267">
+            <span>Does AI change how SEO works?</span>
+            <span class="faq-icon k-style-273">+</span>
+          </button>
+          <div class="faq-body k-style-274">
+            <div class="faq-div-4">
+              <div class="faq-div-5">
+               Yes — people now find businesses through ChatGPT and Google’s AI answers, not just the classic ten blue links. We optimize your website for both: traditional rankings and AI search results. We also use AI tools ourselves to work faster, with every strategy decision made by an experienced human.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -5715,7 +5725,7 @@
       <div class="footer-div">
         <div class="footer-div-2">
           <div class="shared-div-7">
-            <span class="footer-span">K</span><span class="footer-span-2">Kretoss Technology</span>
+            <img src="assets/footer_logo.png" alt="Kretoss Technology" style="height: 48px; width: auto; object-fit: contain;" />
           </div>
           <div class="footer-div-3">
             SEO that turns Google searches into customers. Serving small and
@@ -5891,17 +5901,17 @@
       var scanning = false;
       var scanTimer = null;
 
-      if(analyzeBtn && panelScanning) {
+      if (analyzeBtn && panelScanning) {
         if (scoreRing) {
-           scoreRing.style.transition = 'stroke-dashoffset 1.5s ease-out, stroke 1.5s ease-out';
-           scoreRing.style.strokeDashoffset = 326.7;
+          scoreRing.style.transition = 'stroke-dashoffset 1.5s ease-out, stroke 1.5s ease-out';
+          scoreRing.style.strokeDashoffset = 326.7;
         }
 
         analyzeBtn.addEventListener("click", function () {
           if (scanning) return;
           if (!urlInput.value.trim()) {
-             urlInput.style.borderColor = 'red';
-             return;
+            urlInput.style.borderColor = 'red';
+            return;
           }
           urlInput.style.borderColor = '';
           scanning = true;
@@ -5929,50 +5939,50 @@
               var hash = 0;
               for (var j = 0; j < str.length; j++) {
                 hash = ((hash << 5) - hash) + str.charCodeAt(j);
-                hash |= 0; 
+                hash |= 0;
               }
               function seededRandom(seed, min, max) {
-                 var x = Math.sin(seed) * 10000;
-                 var r = x - Math.floor(x);
-                 return Math.floor(r * (max - min + 1)) + min;
+                var x = Math.sin(seed) * 10000;
+                var r = x - Math.floor(x);
+                return Math.floor(r * (max - min + 1)) + min;
               }
 
-              var score = seededRandom(hash, 55, 85); 
+              var score = seededRandom(hash, 55, 85);
               var offset = 326.7 * (1 - score / 100);
 
               let currentScore = 0;
-              let cTimer = setInterval(function() {
-                 currentScore += 2;
-                 if (currentScore >= score) {
-                    currentScore = score;
-                    clearInterval(cTimer);
-                 }
-                 scoreText.textContent = currentScore;
+              let cTimer = setInterval(function () {
+                currentScore += 2;
+                if (currentScore >= score) {
+                  currentScore = score;
+                  clearInterval(cTimer);
+                }
+                scoreText.textContent = currentScore;
               }, 30);
 
-              setTimeout(function() {
-                 scoreRing.style.strokeDashoffset = offset;
+              setTimeout(function () {
+                scoreRing.style.strokeDashoffset = offset;
               }, 50);
 
-              if(score < 60) {
-                 scoreMessage.textContent = "Critical SEO issues found. Immediate action required.";
-                 scoreRing.style.stroke = "var(--warn)";
-              } else if(score < 75) {
-                 scoreMessage.textContent = "Needs improvement — real opportunity here.";
-                 scoreRing.style.stroke = "#f59f00";
+              if (score < 60) {
+                scoreMessage.textContent = "Critical SEO issues found. Immediate action required.";
+                scoreRing.style.stroke = "var(--warn)";
+              } else if (score < 75) {
+                scoreMessage.textContent = "Needs improvement — real opportunity here.";
+                scoreRing.style.stroke = "#f59f00";
               } else {
-                 scoreMessage.textContent = "Good foundation, but missing top-tier optimization.";
-                 scoreRing.style.stroke = "var(--accent)";
+                scoreMessage.textContent = "Good foundation, but missing top-tier optimization.";
+                scoreRing.style.stroke = "var(--accent)";
               }
 
               var fills = document.querySelectorAll(".score-fill");
               fills.forEach(function (el, idx) {
                 var val = seededRandom(hash + idx + 1, 40, 95);
-                el.style.transition = 'width ' + (1 + idx*0.1) + 's ease-out';
-                setTimeout(function() {
+                el.style.transition = 'width ' + (1 + idx * 0.1) + 's ease-out';
+                setTimeout(function () {
                   el.style.width = val + "%";
-                  if(scoreTexts[idx]) scoreTexts[idx].textContent = val + "/100";
-                }, 100 + (idx*100));
+                  if (scoreTexts[idx]) scoreTexts[idx].textContent = val + "/100";
+                }, 100 + (idx * 100));
               });
             } else {
               scanMsgEl.textContent = scanMessages[i];
@@ -6048,7 +6058,7 @@
           const dataObj = Object.fromEntries(formData.entries());
 
           // Replace this with your actual Node.js backend API URL
-          const apiUrl = 'http://localhost:3000/api/contact';
+          const apiUrl = 'https://kretossadminapi.kretosstechnology.com/api/v1/send-mail';
 
           fetch(apiUrl, {
             method: 'POST',
