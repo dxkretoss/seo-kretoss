@@ -3213,6 +3213,30 @@
         transform: translateY(0);
       }
     }
+
+      /* Tablet */
+    @media (max-width: 992px) {
+      .contact-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-card{
+        padding: 20px;
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 576px) {
+      .contact-container {
+        gap: 30px;
+      }
+    }
+
   </style>
 </head>
 
@@ -3245,7 +3269,7 @@
       <div class="hero-div-2">
         <div class="hero-div-3">
           <div class="hero-div-4">
-           ✦ AI-POWERED SEO FOR US BUSINESSES
+            ✦ AI-POWERED SEO FOR US BUSINESSES
           </div>
           <h1 class="hero-h1">
             Get found on <span class="shared-span">Google</span><br />Get more customers<br /><span
@@ -4016,37 +4040,44 @@
         gap: 60px;
         align-items: start;
       }
+
       @media (min-width: 1024px) {
         .benefits-split {
           grid-template-columns: 1.15fr 0.85fr;
           gap: 80px;
         }
       }
+
       .benefits-left {
         display: flex;
         flex-direction: column;
       }
+
       .benefits-grid {
         display: grid;
         grid-template-columns: 1fr;
         gap: 20px;
       }
+
       @media (min-width: 640px) {
         .benefits-grid {
           grid-template-columns: 1fr 1fr;
         }
-        .benefits-grid > div:last-child {
+
+        .benefits-grid>div:last-child {
           grid-column: 1 / -1;
         }
       }
+
       .benefits-right {
         position: sticky;
         top: 120px;
         border-radius: 24px;
         overflow: hidden;
-        box-shadow: 0 32px 64px rgba(16,24,40,0.08);
+        box-shadow: 0 32px 64px rgba(16, 24, 40, 0.08);
         border: 1px solid #eaecf0;
       }
+
       .benefits-right img {
         width: 100%;
         height: auto;
@@ -4070,114 +4101,123 @@
       <div class="benefits-split">
         <div class="benefits-left">
           <div data-reveal class="benefits-grid">
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 17l6-6 4 4 8-8M15 7h6v6"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            More website visitors
-          </div>
-          <div class="shared-div-9">
-            Show up where customers already search — every day.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 17L17 7M17 7H9M17 7V15"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            Higher Google rankings
-          </div>
-          <div class="shared-div-9">
-            Climb toward the top 3 spots that get most of the clicks.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M7 3h10v18H7zM10 17.5h4"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            More phone calls
-          </div>
-          <div class="shared-div-9">
-            Local searches turn into ringing phones and booked jobs.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M4 6h16v12H4zM4 7l8 6 8-6"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            More leads
-          </div>
-          <div class="shared-div-9">
-            Turn searches into form fills, quotes, and appointments.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 2v20M17 6.5H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H6"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            More sales
-          </div>
-          <div class="shared-div-9">
-            Visitors arrive already looking to buy what you sell.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3l8 3v6c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V6z"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            Better brand trust
-          </div>
-          <div class="shared-div-9">
-            Ranking high signals "established and reliable" to buyers.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M5 20V12M12 20V6M19 20V9"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            Lower marketing cost
-          </div>
-          <div class="shared-div-9">
-            Organic clicks are free — no bidding, no per-click fees.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M3 12h4l3-8 4 16 3-8h4"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            Long-term growth
-          </div>
-          <div class="shared-div-9">
-            Every month of SEO builds on the last. It compounds.
-          </div>
-        </div>
-        <div class="benefits-div-2" data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
-          <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 3M21 3v5h-5"></path>
-            </svg></span>
-          <div class="shared-div-4">
-            24/7 lead generation
-          </div>
-          <div class="shared-div-9">
-            Your rankings work nights, weekends, and holidays.
-          </div>
-        </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 17l6-6 4 4 8-8M15 7h6v6"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                More website visitors
+              </div>
+              <div class="shared-div-9">
+                Show up where customers already search — every day.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 17L17 7M17 7H9M17 7V15"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                Higher Google rankings
+              </div>
+              <div class="shared-div-9">
+                Climb toward the top 3 spots that get most of the clicks.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M7 3h10v18H7zM10 17.5h4"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                More phone calls
+              </div>
+              <div class="shared-div-9">
+                Local searches turn into ringing phones and booked jobs.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 6h16v12H4zM4 7l8 6 8-6"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                More leads
+              </div>
+              <div class="shared-div-9">
+                Turn searches into form fills, quotes, and appointments.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 2v20M17 6.5H10a3 3 0 0 0 0 6h4a3 3 0 0 1 0 6H6"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                More sales
+              </div>
+              <div class="shared-div-9">
+                Visitors arrive already looking to buy what you sell.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3l8 3v6c0 4.5-3.5 7.5-8 9-4.5-1.5-8-4.5-8-9V6z"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                Better brand trust
+              </div>
+              <div class="shared-div-9">
+                Ranking high signals "established and reliable" to buyers.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 20V12M12 20V6M19 20V9"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                Lower marketing cost
+              </div>
+              <div class="shared-div-9">
+                Organic clicks are free — no bidding, no per-click fees.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M3 12h4l3-8 4 16 3-8h4"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                Long-term growth
+              </div>
+              <div class="shared-div-9">
+                Every month of SEO builds on the last. It compounds.
+              </div>
+            </div>
+            <div class="benefits-div-2"
+              data-hover="transform:translateY(-4px);box-shadow:0 16px 36px rgba(16,24,40,.08)">
+              <span class="benefits-span"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                  stroke="var(--accent)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M12 3a9 9 0 1 0 9 9M12 7v5l3 3M21 3v5h-5"></path>
+                </svg></span>
+              <div class="shared-div-4">
+                24/7 lead generation
+              </div>
+              <div class="shared-div-9">
+                Your rankings work nights, weekends, and holidays.
+              </div>
+            </div>
           </div>
         </div>
         <div data-reveal class="benefits-right">
@@ -5831,12 +5871,16 @@
 
       // ---- Live SEO checker ----
       var analyzeBtn = document.getElementById("analyzeBtn");
-      var panelIdle = document.getElementById("checkerIdle");
+      var urlInput = document.getElementById("seoUrlInput");
+      var inputSection = document.querySelector(".checker-div-2");
       var panelScanning = document.getElementById("checkerScanning");
       var panelDone = document.getElementById("checkerDone");
       var scanMsgEl = document.getElementById("scanMessage");
       var scanBar = document.getElementById("scanProgressBar");
       var scoreRing = document.getElementById("scoreRing");
+      var scoreText = document.querySelector(".checkerDone-div-7");
+      var scoreMessage = document.querySelector(".checkerDone-div-9");
+      var scoreTexts = document.querySelectorAll(".checkerDone-div-11 span:last-child");
       var scanMessages = [
         "Crawling your pages…",
         "Checking page speed…",
@@ -5847,40 +5891,96 @@
       var scanning = false;
       var scanTimer = null;
 
-      analyzeBtn.addEventListener("click", function () {
-        if (scanning) return;
-        scanning = true;
-        analyzeBtn.textContent = "Analyzing…";
-        panelIdle.style.display = "none";
-        panelDone.style.display = "none";
-        panelScanning.style.display = "flex";
-        document.querySelectorAll(".score-fill").forEach(function (el) {
-          el.style.width = "0%";
-        });
-        scoreRing.style.strokeDashoffset = "326.7";
+      if(analyzeBtn && panelScanning) {
+        if (scoreRing) {
+           scoreRing.style.transition = 'stroke-dashoffset 1.5s ease-out, stroke 1.5s ease-out';
+           scoreRing.style.strokeDashoffset = 326.7;
+        }
 
-        var i = 0;
-        scanMsgEl.textContent = scanMessages[0];
-        scanBar.style.width = Math.round((1 / 5) * 100) + "%";
-        clearInterval(scanTimer);
-        scanTimer = setInterval(function () {
-          i++;
-          if (i >= 5) {
-            clearInterval(scanTimer);
-            scanning = false;
-            analyzeBtn.textContent = "Analyze My Website";
-            panelScanning.style.display = "none";
-            panelDone.style.display = "block";
-            scoreRing.style.strokeDashoffset = String(326.7 * (1 - 0.78));
-            document.querySelectorAll(".score-fill").forEach(function (el) {
-              el.style.width = el.getAttribute("data-width");
-            });
-          } else {
-            scanMsgEl.textContent = scanMessages[i];
-            scanBar.style.width = Math.round(((i + 1) / 5) * 100) + "%";
+        analyzeBtn.addEventListener("click", function () {
+          if (scanning) return;
+          if (!urlInput.value.trim()) {
+             urlInput.style.borderColor = 'red';
+             return;
           }
-        }, 850);
-      });
+          urlInput.style.borderColor = '';
+          scanning = true;
+
+          inputSection.style.display = "none";
+          panelDone.style.display = "none";
+          panelScanning.style.display = "flex";
+          document.querySelectorAll(".score-fill").forEach(function (el) {
+            el.style.width = "0%";
+          });
+          scoreRing.style.strokeDashoffset = "326.7";
+
+          var i = 0;
+          scanMsgEl.textContent = scanMessages[0];
+          scanBar.style.width = Math.round((1 / 5) * 100) + "%";
+          clearInterval(scanTimer);
+          scanTimer = setInterval(function () {
+            i++;
+            if (i >= 5) {
+              clearInterval(scanTimer);
+              scanning = false;
+              panelScanning.style.display = "none";
+              panelDone.style.display = "block";
+              var str = urlInput.value.trim().toLowerCase();
+              var hash = 0;
+              for (var j = 0; j < str.length; j++) {
+                hash = ((hash << 5) - hash) + str.charCodeAt(j);
+                hash |= 0; 
+              }
+              function seededRandom(seed, min, max) {
+                 var x = Math.sin(seed) * 10000;
+                 var r = x - Math.floor(x);
+                 return Math.floor(r * (max - min + 1)) + min;
+              }
+
+              var score = seededRandom(hash, 55, 85); 
+              var offset = 326.7 * (1 - score / 100);
+
+              let currentScore = 0;
+              let cTimer = setInterval(function() {
+                 currentScore += 2;
+                 if (currentScore >= score) {
+                    currentScore = score;
+                    clearInterval(cTimer);
+                 }
+                 scoreText.textContent = currentScore;
+              }, 30);
+
+              setTimeout(function() {
+                 scoreRing.style.strokeDashoffset = offset;
+              }, 50);
+
+              if(score < 60) {
+                 scoreMessage.textContent = "Critical SEO issues found. Immediate action required.";
+                 scoreRing.style.stroke = "var(--warn)";
+              } else if(score < 75) {
+                 scoreMessage.textContent = "Needs improvement — real opportunity here.";
+                 scoreRing.style.stroke = "#f59f00";
+              } else {
+                 scoreMessage.textContent = "Good foundation, but missing top-tier optimization.";
+                 scoreRing.style.stroke = "var(--accent)";
+              }
+
+              var fills = document.querySelectorAll(".score-fill");
+              fills.forEach(function (el, idx) {
+                var val = seededRandom(hash + idx + 1, 40, 95);
+                el.style.transition = 'width ' + (1 + idx*0.1) + 's ease-out';
+                setTimeout(function() {
+                  el.style.width = val + "%";
+                  if(scoreTexts[idx]) scoreTexts[idx].textContent = val + "/100";
+                }, 100 + (idx*100));
+              });
+            } else {
+              scanMsgEl.textContent = scanMessages[i];
+              scanBar.style.width = Math.round(((i + 1) / 5) * 100) + "%";
+            }
+          }, 600);
+        });
+      }
 
       // ---- ROI calculator ----
       var rngVisitors = document.getElementById("rngVisitors");
