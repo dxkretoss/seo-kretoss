@@ -1836,6 +1836,57 @@
       gap: 8px;
     }
 
+      .benefits-split {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 60px;
+        align-items: start;
+      }
+
+      @media (min-width: 1024px) {
+        .benefits-split {
+          grid-template-columns: 1.15fr 0.85fr;
+          gap: 80px;
+        }
+      }
+
+      .benefits-left {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      @media (min-width: 640px) {
+        .benefits-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .benefits-grid>div:last-child {
+          grid-column: 1 / -1;
+        }
+      }
+
+      .benefits-right {
+        position: sticky;
+        top: 120px;
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 32px 64px rgba(16, 24, 40, 0.08);
+        border: 1px solid #eaecf0;
+      }
+
+      .benefits-right img {
+        width: 100%;
+        height: auto;
+        display: block;
+        object-fit: cover;
+      }
+
     @media (max-width: 1024px) {
       .k-style-160 {
         grid-column: span 2;
@@ -2901,124 +2952,7 @@
       border-radius: 10px;
     }
 
-    /* PROPER RESPONSIVE DESIGN - TABLET */
-    @media (max-width: 1024px) {
-
-      /* Convert 4-column grids to 2-columns on tablet */
-      .problems-div-3,
-      .benefits-div,
-      .packages-div-3,
-      .footer-div {
-        grid-template-columns: repeat(2, 1fr) !important;
-      }
-
-      /* Make sure callout boxes span appropriately */
-      .problems-div-8 {
-        grid-column: span 2 !important;
-      }
-
-      h1,
-      .hero-h1 {
-        font-size: clamp(38px, 6vw, 54px) !important;
-        line-height: 1.1 !important;
-      }
-
-      h2,
-      .section-h2,
-      .problems-div-4 {
-        font-size: clamp(32px, 5vw, 42px) !important;
-      }
-    }
-
-    /* PROPER RESPONSIVE DESIGN - MOBILE */
-    @media (max-width: 768px) {
-
-      /* Stack all grids on mobile */
-      .problems-div-3,
-      .benefits-div,
-      .packages-div-3,
-      .footer-div,
-      .faq-div-3,
-      .testimonials-div,
-      .included-div,
-      .platforms-div,
-      .shared-div-11 {
-        grid-template-columns: 1fr !important;
-        gap: 20px !important;
-      }
-
-      .industries-div {
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-      }
-
-      /* Reset grid column spans to 1 */
-      .problems-div-8 {
-        grid-column: span 1 !important;
-      }
-
-      /* Stack Flex Containers horizontally wrapping */
-      .hero-div-3,
-      .cta-div-3 {
-        flex-direction: column !important;
-        /* align-items: center !important; */
-        /* text-align: center !important; */
-      }
-
-      /* Fix Navbar for mobile */
-      .nav-nav,
-      .header-nav {
-        display: none !important;
-      }
-
-      /* Ensure full width */
-      .hero-div-12,
-      .hero-div-13,
-      input,
-      button {
-        width: 100% !important;
-        flex: 1 1 100% !important;
-      }
-
-      /* Adjust padding for mobile scrolling */
-      section {
-        padding-left: 20px !important;
-        padding-right: 20px !important;
-        padding-top: 50px !important;
-        padding-bottom: 50px !important;
-      }
-
-      .cta-div-2,
-      .shared-div {
-        padding: 0;
-      }
-
-
-      .hero-div-2 {
-        gap: 40px !important;
-        padding: 0;
-      }
-
-      /* Fluid Typography */
-      h1,
-      .hero-h1 {
-        font-size: clamp(32px, 8vw, 42px) !important;
-        line-height: 1.15 !important;
-      }
-
-      h2,
-      .section-h2,
-      .problems-div-4 {
-        font-size: clamp(28px, 7vw, 34px) !important;
-        line-height: 1.2 !important;
-      }
-
-      /* Sticky CTA Hide */
-      #stickyBar,
-      .stickyBar-div {
-        display: none !important;
-      }
-    }
+    
 
     /* ============ 17 · CONTACT STYLES ============ */
     .contact-section {
@@ -3204,6 +3138,11 @@
       max-width: 400px;
     }
 
+    .benefit-header{
+      text-align: left;
+      margin-bottom: 48px;
+    }
+
     @keyframes fadeIn {
       from {
         opacity: 0;
@@ -3236,6 +3175,202 @@
     @media (max-width: 576px) {
       .contact-container {
         gap: 30px;
+      }
+    }
+
+    /* PROPER RESPONSIVE DESIGN - TABLET */
+    @media (max-width: 1024px) {
+
+      /* Convert 4-column grids to 2-columns on tablet */
+      .problems-div-3,
+      .benefits-div,
+      .packages-div-3,
+      .footer-div {
+        grid-template-columns: repeat(2, 1fr) !important;
+      }
+
+      /* Make sure callout boxes span appropriately */
+      .problems-div-8 {
+        grid-column: span 2 !important;
+      }
+
+      h1,
+      .hero-h1 {
+        font-size: clamp(38px, 6vw, 54px) !important;
+        line-height: 1.1 !important;
+      }
+
+      h2,
+      .section-h2,
+      .problems-div-4 {
+        font-size: clamp(32px, 5vw, 42px) !important;
+      }
+    }
+
+    /* PROPER RESPONSIVE DESIGN - MOBILE */
+    @media (max-width: 768px) {
+
+      .problems-div,
+       .shared-div-3,
+      .hero-div-4 {
+        font-size: 10px;
+      }
+
+      .contact-left,
+      .hero-div-3{
+        gap: 10px;
+      }
+
+      .packages-div-3,
+      .checker-div-2,
+      .checkerIdle-div,
+      .what-is-seo-div-3,
+      .new-hg-bottom,
+      .roi-div-5,
+      .benefits-div-2,
+      .roi-div-2,
+      .results-div,
+      .platforms-div-2,
+      .seo-vs-ads-div-5,
+      .seo-vs-ads-div-4,
+      .seo-vs-ads-div-2{
+        padding: 20px;
+      }
+
+      .testimonials-div-2,
+      .problems-div-2,
+      .why-div,
+      .included-div-2,
+      .process-div{
+        padding: 15px;
+      }
+
+      .shared-div-14,
+      .packages-div,
+      .shared-div-8,
+       .benefit-header,
+      .shared-div-10,
+      .shared-div-2{
+        margin-bottom: 20px;
+      }
+
+      .benefits-split{
+        gap: 20px;
+      }
+
+      .problems-p,
+      .cta-p,
+      .faq-div-5,
+      .contact-desc,
+      .what-is-seo-p,
+      .shared-p,
+      .hero-p{
+        font-size: 14px;
+      }
+
+      .hero-a-2,
+      .cta-a,
+      .cta-a-2,
+      .hero-a{
+        font-size: 14px;
+        padding: 15px;
+      }
+
+      .hero-div-27{
+        left: -15px;
+      }
+
+      .k-style-267{
+        padding: 15px;
+      }
+
+      .faq-div-5{
+        padding: 0 15px 15px;
+      }
+
+      /* Stack all grids on mobile */
+      .problems-div-3,
+      .benefits-div,
+      .packages-div-3,
+      .footer-div,
+      .faq-div-3,
+      .testimonials-div,
+      .included-div,
+      .platforms-div,
+      .shared-div-11 {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+      }
+
+      .industries-div {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 10px !important;
+      }
+
+      /* Reset grid column spans to 1 */
+      .problems-div-8 {
+        grid-column: span 1 !important;
+      }
+
+      /* Stack Flex Containers horizontally wrapping */
+      .hero-div-3 {
+        flex-direction: column !important;
+        /* align-items: center !important; */
+        /* text-align: center !important; */
+      }
+
+      /* Fix Navbar for mobile */
+      .nav-nav,
+      .header-nav {
+        display: none !important;
+      }
+
+      /* Ensure full width */
+      .hero-div-12,
+      .hero-div-13,
+      input,
+      button {
+        width: 100% !important;
+        flex: 1 1 100% !important;
+      }
+
+      /* Adjust padding for mobile scrolling */
+      section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        padding-top: 30px !important;
+        padding-bottom: 50px !important;
+      }
+
+      .cta-div-2,
+      .shared-div {
+        padding: 0;
+      }
+
+
+      .hero-div-2 {
+        gap: 40px !important;
+        padding: 0;
+      }
+
+      /* Fluid Typography */
+      h1,
+      .hero-h1 {
+        font-size: clamp(32px, 8vw, 42px) !important;
+        line-height: 1.15 !important;
+      }
+
+      h2,
+      .section-h2,
+      .problems-div-4 {
+        font-size: clamp(28px, 7vw, 34px) !important;
+        line-height: 1.2 !important;
+      }
+
+      /* Sticky CTA Hide */
+      #stickyBar,
+      .stickyBar-div {
+        display: none !important;
       }
     }
   </style>
@@ -4031,60 +4166,8 @@
     </section>
 
     <!-- ============ 5 · BENEFITS ============ -->
-    <style>
-      .benefits-split {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 60px;
-        align-items: start;
-      }
-
-      @media (min-width: 1024px) {
-        .benefits-split {
-          grid-template-columns: 1.15fr 0.85fr;
-          gap: 80px;
-        }
-      }
-
-      .benefits-left {
-        display: flex;
-        flex-direction: column;
-      }
-
-      .benefits-grid {
-        display: grid;
-        grid-template-columns: 1fr;
-        gap: 20px;
-      }
-
-      @media (min-width: 640px) {
-        .benefits-grid {
-          grid-template-columns: 1fr 1fr;
-        }
-
-        .benefits-grid>div:last-child {
-          grid-column: 1 / -1;
-        }
-      }
-
-      .benefits-right {
-        position: sticky;
-        top: 120px;
-        border-radius: 24px;
-        overflow: hidden;
-        box-shadow: 0 32px 64px rgba(16, 24, 40, 0.08);
-        border: 1px solid #eaecf0;
-      }
-
-      .benefits-right img {
-        width: 100%;
-        height: auto;
-        display: block;
-        object-fit: cover;
-      }
-    </style>
     <section id="benefits" class="shared-div">
-      <div data-reveal style="text-align: left; margin-bottom: 48px;">
+      <div data-reveal class="benefit-header">
         <div class="shared-div-3">
           What you get
         </div>
@@ -6059,7 +6142,8 @@
           dataObj.source = 'Kretoss SEO';
 
           // Replace this with your actual Node.js backend API URL
-          const apiUrl = 'https://kretossadminapi.kretosstechnology.com/api/v1/send-mail';
+            const apiUrl = 'https://kretossadminapi.kretosstechnology.com/api/v1/send-mail';
+          // const apiUrl = 'http://localhost:4011/api/v1/send-mail';
 
           fetch(apiUrl, {
             method: 'POST',
