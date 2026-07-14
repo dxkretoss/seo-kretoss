@@ -4723,7 +4723,7 @@
             </div>
           </div>
         </div>
-        <div class="included-div-2">
+        <!-- <div class="included-div-2">
           <span class="included-span">✓</span>
           <div>
             <div class="included-div-3">
@@ -4731,6 +4731,17 @@
             </div>
             <div class="included-div-4">
               Know where every lead comes from
+            </div>
+          </div>
+        </div> -->
+         <div class="included-div-2">
+          <span class="included-span">✓</span>
+          <div>
+            <div class="included-div-3">
+              AI Search Optimization
+            </div>
+            <div class="included-div-4">
+             Get found in ChatGPT & Google AI answers
             </div>
           </div>
         </div>
@@ -5990,7 +6001,7 @@
           scoreRing.style.strokeDashoffset = 326.7;
         }
 
-        analyzeBtn.addEventListener("click", function () {
+        analyzeBtn.addEventListener("click", async function () {
           if (scanning) return;
           if (!urlInput.value.trim()) {
             urlInput.style.borderColor = 'red';
@@ -6013,24 +6024,32 @@
           clearInterval(scanTimer);
           scanTimer = setInterval(function () {
             i++;
-            if (i >= 5) {
-              clearInterval(scanTimer);
-              scanning = false;
-              panelScanning.style.display = "none";
-              panelDone.style.display = "block";
-              var str = urlInput.value.trim().toLowerCase();
-              var hash = 0;
-              for (var j = 0; j < str.length; j++) {
-                hash = ((hash << 5) - hash) + str.charCodeAt(j);
-                hash |= 0;
-              }
-              function seededRandom(seed, min, max) {
-                var x = Math.sin(seed) * 10000;
-                var r = x - Math.floor(x);
-                return Math.floor(r * (max - min + 1)) + min;
-              }
+            if (i < 5) {
+              scanMsgEl.textContent = scanMessages[i];
+              scanBar.style.width = Math.round(((i + 1) / 5) * 100) + "%";
+            }
+          }, 600);
 
-              var score = seededRandom(hash, 55, 85);
+          // Replace this with your actual Node.js backend API URL
+            const apiUrl = 'https://kretossadminapi.kretosstechnology.com/api/v1/seo/analyze';
+          // const apiUrl = 'http://localhost:4012/api/v1/seo/analyze';
+
+          try {
+            const res = await fetch(apiUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ url: urlInput.value.trim() })
+            });
+            const data = await res.json();
+            
+            clearInterval(scanTimer);
+            scanning = false;
+            panelScanning.style.display = "none";
+            panelDone.style.display = "block";
+
+            if (data.success) {
+              const result = data.data;
+              const score = result.score;
               var offset = 326.7 * (1 - score / 100);
 
               let currentScore = 0;
@@ -6060,18 +6079,28 @@
 
               var fills = document.querySelectorAll(".score-fill");
               fills.forEach(function (el, idx) {
-                var val = seededRandom(hash + idx + 1, 40, 95);
+                var val = Math.floor(Math.random() * (95 - 40 + 1)) + 40;
                 el.style.transition = 'width ' + (1 + idx * 0.1) + 's ease-out';
                 setTimeout(function () {
                   el.style.width = val + "%";
                   if (scoreTexts[idx]) scoreTexts[idx].textContent = val + "/100";
                 }, 100 + (idx * 100));
               });
+              
+              console.log("Passed:", result.passed);
+              console.log("Failed:", result.failed);
+              console.log("Recommendations:", result.recommendations);
             } else {
-              scanMsgEl.textContent = scanMessages[i];
-              scanBar.style.width = Math.round(((i + 1) / 5) * 100) + "%";
+              inputSection.style.display = "flex";
+              alert("Error analyzing website: " + data.message);
             }
-          }, 600);
+          } catch (error) {
+            clearInterval(scanTimer);
+            scanning = false;
+            panelScanning.style.display = "none";
+            inputSection.style.display = "flex";
+            alert("Failed to connect to the backend server. Make sure it is running.");
+          }
         });
       }
 
